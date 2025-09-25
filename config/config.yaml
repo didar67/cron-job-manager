@@ -1,0 +1,26 @@
+# Configuration File for Cron Job Script
+# Purpose: Centralized settings for scheduling and executing
+#          cron jobs in a professional & reusable manner.
+
+# Logging Configuration
+logging:
+  level: INFO             # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: logs/app.log      # Path to rotating log file
+  max_bytes: 1048576      # 1 MB (rotating log size limit)
+  backup_count: 5         # Number of old log files to keep
+
+# Cron Job Configuration
+cronjob:
+  enabled: true           # Master switch for enabling/disabling jobs
+  dry_run: true           # If true, script only prints actions (no changes applied)
+  schedule: "0 * * * *"   # Default schedule (every hour) - can be overridden by CLI
+  command: "/usr/bin/python3 /home/user/scripts/sample_task.py"
+                          # Command/script to be executed
+
+# Notification Settings (Optional Extension)
+notification:
+  enabled: false
+  email: "admin@example.com"
+  smtp_server: "smtp.example.com"
+  smtp_port: 587
+  

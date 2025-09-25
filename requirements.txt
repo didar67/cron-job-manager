@@ -1,0 +1,6 @@
+# Core dependencies
+python-crontab>=2.7.1
+PyYAML>=6.0.2
+
+# Optional (for environment variable support)
+python-dotenv>=1.0.1
